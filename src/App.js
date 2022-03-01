@@ -2,17 +2,23 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [linea1, setLinea1] = useState("Hola mundo");
-  const [linea2, setLinea2] = useState("Hola mundo 2");
+  const [linea1, setLinea1] = useState("");
+  const [linea2, setLinea2] = useState("");
+  const [imagen, setImagen] = useState("");
+
   const onChangeLinea1 = function (e) {
     setLinea1(e.target.value);
   };
   const onChangeLinea2 = function (e) {
     setLinea2(e.target.value);
   };
+  const onChangeImagen = function (e) {
+    setImagen(e.target.value);
+  };
+
   return (
     <div className="App">
-      <select>
+      <select onChange={onChangeImagen}>
         <option value="fire">Casa en llamas</option>
         <option value="futurama">Futurama</option>
         <option value="history">History Channel</option>
@@ -32,7 +38,7 @@ function App() {
         <br />
         <span>{linea2}</span>
         <br />
-        <img src="" />
+        <img src={`/img/${imagen}.jpg`} />
       </div>
     </div>
   );
