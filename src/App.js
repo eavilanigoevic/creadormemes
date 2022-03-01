@@ -5,7 +5,10 @@ function App() {
   const [linea1, setLinea1] = useState("Hola mundo");
   const [linea2, setLinea2] = useState("Hola mundo 2");
   const onChangeLinea1 = function (e) {
-    alert(e.target.value);
+    setLinea1(e.target.value);
+  };
+  const onChangeLinea2 = function (e) {
+    setLinea2(e.target.value);
   };
   return (
     <div className="App">
@@ -20,7 +23,7 @@ function App() {
       <br />
       <input onChange={onChangeLinea1} type="text" placeholder="Linea 1" />
       <br />
-      <input type="text" placeholder="Linea 2" />
+      <input onChange={onChangeLinea2} type="text" placeholder="Linea 2" />
       <br />
       <button>Exportar</button>
       <br />
